@@ -1,3 +1,21 @@
 #but{
     width:100%;
+    border-radius: 0%;
 }
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+/* .fixme{
+    display: flex;
+} */
+.img-square-wrapper{
+    width:130px;
+}
+img {
+    border-radius: 50%;
+}
+/* #bottombor{
+    border-style: solid;
+    border-width: medium;
+} */
