@@ -1,5 +1,5 @@
 let jsondata;
-let inme = "";
+let inme = [];
 function rama() {
     var requestOptions = {
         method: 'GET',
@@ -11,9 +11,24 @@ function rama() {
             jsondata = JSON.parse(result);
             console.log("data", jsondata.results)
             for (let i = 0; i < jsondata.results.length; i++) {
-                inme += jsondata.results[i].name + "<br>";
+                // inme += jsondata.results[i].name + "<br>";
+                var div = document.createElement("div");
+                inme[i] = jsondata.results[i].image
+                var img = document.createElement('img');
+                img.src = jsondata.results[i].image;
+                var textNode = document.createTextNode(jsondata.results[i].name + " ");
+                var textNode2 = document.createTextNode(jsondata.results[i].species);
+                div.appendChild(textNode);
+                div.appendChild(textNode2);
+                document.body.appendChild(img);
+                document.body.appendChild(div);
+
+
             }
-            document.getElementById("show").innerHTML = inme;
+
+
+
+            // document.getElementById("show").innerHTML = inme;
         })
         .catch(error => console.log('error', error));
 
