@@ -1,5 +1,5 @@
 #but{
-    width:100%;
+
     border-radius: 0%;
 }
 .card-horizontal {
@@ -12,10 +12,25 @@
 .img-square-wrapper{
     width:130px;
 }
-img {
+/* img {
     border-radius: 50%;
-}
+} */
 /* #bottombor{
     border-style: solid;
     border-width: medium;
 } */
+
+/* html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+} */
+
+#down {
+    margin-top: 25px;
+    /* padding-bottom: 25%; */
+}
+/* #dd{margin: auto;} */
