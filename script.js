@@ -13,6 +13,8 @@ let cpage;
 let spage;
 let xpage;
 let gg = "";
+let y;
+
 
 function rama(www) {
     let jsondata;
@@ -26,11 +28,13 @@ function rama(www) {
             jsondata = JSON.parse(result);
             // console.log("data", jsondata)
             for (let i = 0; i < jsondata.results.length; i++) {
+                y = i + 1;
                 inin +=
                     `<div class="d-flex flex-column">
                 <div class="p-2"></div>
                 <div class="p-2">
                 <div class="card">
+                <a href="info.html?${jsondata.results[i].id}" target="_blank">
                     <div class="card-horizontal">
                     <div class="img-square-wrapper">
                     <img  src='${jsondata.results[i].image}' style="width:100%">
@@ -39,6 +43,7 @@ function rama(www) {
                             <h4 id="bottombor" class="card-title">${jsondata.results[i].name}</h4>
                             <hr>
                             <p class="card-text">${jsondata.results[i].species}</p>
+                            </a>
                         </div>
                         </div>
                         </div>
@@ -185,6 +190,7 @@ function page(kk) {
         document.getElementById("ee").style.visibility = "visible";
 
     gg = "https://rickandmortyapi.com/api/character/?page=" + curr.toString();
+
     let inin = "";
     let jsondata;
     var requestOptions = {
@@ -196,11 +202,13 @@ function page(kk) {
         .then(result => {
             jsondata = JSON.parse(result);
             for (let i = 0; i < jsondata.results.length; i++) {
+                y = i + 1;
                 inin +=
                     `<div class="d-flex flex-column">
                 <div class="p-2"></div>
                 <div class="p-2">
                 <div class="card">
+                <a href="info.html?${jsondata.results[i].id}" target="_blank">
                     <div class="card-horizontal">
                     <div class="img-square-wrapper">
                     <img  src='${jsondata.results[i].image}' style="width:100%">
@@ -209,6 +217,7 @@ function page(kk) {
                             <h4 id="bottombor" class="card-title">${jsondata.results[i].name}</h4>
                             <hr>
                             <p class="card-text">${jsondata.results[i].species}</p>
+                            </a>
                         </div>
                         </div>
                         </div>
@@ -222,3 +231,14 @@ function page(kk) {
 }
 
 
+// function final(id) {
+//     console.log(id);
+//     console.log("i am here");
+// }
+
+
+
+// function appendText(id) {
+//     let uu=miss+id;
+//     localStorage.setItem("url",uu);
+// }
